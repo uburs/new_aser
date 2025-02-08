@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR with Multimodal Emotion Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .caption {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        .highlight {
+            background-color: yellow;
+            cursor: pointer;
+            position: relative;
+        }
+        .tooltip {
+            visibility: hidden;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .highlight:hover .tooltip {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASR with Multimodal Emotion Detection</h1>
+    <p class="caption" id="caption-text">
+        "I am <span class='highlight' data-tooltip='Facial expression: Smiling, conveys confidence.'>happy</span> to be here today. 
+        This topic is <span class='highlight' data-tooltip='Voice intonation: Emphasized, suggests excitement.'>very exciting</span>! 
+        However, some challenges <span class='highlight' data-tooltip='Body gesture: Shrugged shoulders, expresses uncertainty.'>remain unclear</span>."
+    </p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".highlight").forEach(element => {
+                const tooltipText = element.getAttribute("data-tooltip");
+                const tooltip = document.createElement("span");
+                tooltip.classList.add("tooltip");
+                tooltip.textContent = tooltipText;
+                element.appendChild(tooltip);
+            });
+        });
+    </script>
+</body>
+</html>
