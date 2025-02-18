@@ -19,18 +19,20 @@
             position: relative;
         }
         .tooltip {
-            visibility: hidden;
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 2px;
-            border-radius: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
+        visibility: hidden;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 4px 6px; /* Reduce padding */
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 0.9em; /* Adjust font size */
+        line-height: 1.2; /* Reduce line height */
         }
         .highlight:hover .tooltip {
             visibility: visible;
